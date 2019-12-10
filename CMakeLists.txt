@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1.0)
 
-project(TODO)
+project(KTodo)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -28,15 +28,21 @@ get_target_property(QtCore_location Qt5::Widgets LOCATION)
 find_package(Qt5 COMPONENTS Core REQUIRED)
 get_target_property(QtCore_location Qt5::Core LOCATION)
 
-add_executable(TODO
-    mainwindow.ui
-    mainwindow.cpp
+add_executable(KTodo
+	mainwindow.ui
+	mainwindow.cpp
 	mainwindow.h
-    main.cpp
+	main.cpp
+	kviewer.cpp
+	kviewer.h
+	kstdafx.h
+	data/kdatamgr.h
+	data/kdatamgr.cpp
 )
 
-target_link_libraries(TODO Qt5::Widgets Qt5::Core)
+target_link_libraries(KTodo Qt5::Widgets Qt5::Core)
 
+#todo windows copy
 add_custom_command(TARGET ${PROJECT_NAME}
   PRE_BUILD 
   COMMAND echo "executing a fake command"
