@@ -36,6 +36,9 @@ add_executable(KTodo
 	kviewer.cpp
 	kviewer.h
 	kstdafx.h
+	ktodowidget.h
+	ktodowidget.cpp
+
 	data/kdatamgr.h
 	data/kdatamgr.cpp
 )
