@@ -38,6 +38,11 @@ add_executable(KTodo
 	kstdafx.h
 	ktodowidget.h
 	ktodowidget.cpp
+	kleftwidget.h
+	kleftwidget.cpp
+
+	shell/kclassitem.h
+	shell/kclassitem.cpp
 
 	data/kdatamgr.h
 	data/kdatamgr.cpp
