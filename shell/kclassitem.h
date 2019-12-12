@@ -9,12 +9,8 @@ public:
 	KClassItem(QWidget* parent = nullptr);
 	~KClassItem();
 
-// public:
-// 	bool isPressed(QStyleOptionButton* option);
-// 	bool isChecked(QStyleOptionButton* option);
-// 	bool isHover(QStyleOptionButton* option);
-// 	bool isAutoRaise(QStyleOptionButton* option);
 public:
+	QSize sizeHint() const override;
 	virtual void paintEvent(QPaintEvent*) override;
 };
 

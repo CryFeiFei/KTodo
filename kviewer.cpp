@@ -13,7 +13,6 @@ KViewer::KViewer(QWidget *parent) : QWidget(parent)
 	m_splitter = new QSplitter(Qt::Horizontal, this);
 
 	KLeftWidget* leftWidget = new KLeftWidget(this);
-	leftWidget->setStyleSheet("background-color: yellow");
 
 	KTodoWidget* todoWidget = new KTodoWidget(this);
 //	todoWidget->setStyleSheet("background-color: red");
@@ -23,6 +22,7 @@ KViewer::KViewer(QWidget *parent) : QWidget(parent)
 
 	m_splitter->setHandleWidth(0);
 	m_splitter->setStretchFactor(1, 1);
+//	m_splitter->setCollapsible(0, false);
 
 	mainLayout->addWidget(m_splitter);
 	setLayout(mainLayout);

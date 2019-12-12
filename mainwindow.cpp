@@ -3,6 +3,7 @@
 #include <QPainter>
 #include "kviewer.h"
 #include <QDebug>
+#include "kstdafx.h"
 
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -12,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	KViewer* view = new KViewer(this);
 	setCentralWidget(view);
+
+
+	resize(KStyle::dpiScaled(900), KStyle::dpiScaled(550));
 }
 
 MainWindow::~MainWindow()

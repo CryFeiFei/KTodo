@@ -9,6 +9,8 @@ class KLeftWidget : public QWidget
 public:
 	explicit KLeftWidget(QWidget *parent = nullptr);
 
+	QSize minimumSizeHint() const override;
+
 signals:
 
 public slots:

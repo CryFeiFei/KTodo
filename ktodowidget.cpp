@@ -12,9 +12,6 @@ KTodoWidget::KTodoWidget(QWidget *parent) : QWidget(parent)
 	QLabel* label = new QLabel("123", this);
 	mainLayout->addWidget(label);
 
-	double dd = dpiScaled(1);
-	qDebug() << "--------------" << dd << endl;
-
 	setStyleSheet("background-color: blue");
 
 	setLayout(mainLayout);

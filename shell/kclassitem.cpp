@@ -3,6 +3,8 @@
 #include <QStyleOptionButton>
 #include <QDebug>
 #include <QPainter>
+#include "../kstdafx.h"
+
 KClassItem::KClassItem(QWidget* parent) : QPushButton(parent)
 {
 	setFlat(true);
@@ -11,6 +13,11 @@ KClassItem::KClassItem(QWidget* parent) : QPushButton(parent)
 KClassItem::~KClassItem()
 {
 
+}
+
+QSize KClassItem::sizeHint() const
+{
+	return QSize(size().width(), LEFT_ITEM_HEIGHT);
 }
 
 bool isPressed(QStyleOptionButton* option)
@@ -79,6 +86,7 @@ void KClassItem::paintEvent(QPaintEvent* e)
 		qDebug() << "is unpress" << endl;
 	}
 
+	
 
 	QPainter painter(this);
 	painter.fillRect(rect(), Qt::red);
