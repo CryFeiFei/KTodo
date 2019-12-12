@@ -11,6 +11,7 @@
 KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 {
 	QScrollArea* scrollArea = new QScrollArea(this);
+	scrollArea->setFrameShape(QFrame::NoFrame); //这个去除掉滚动条的边框，要不然每次内边都有个1px的空白
 	QVBoxLayout* mainLayout = new QVBoxLayout(this);
 	mainLayout->setContentsMargins(0, 0, 0, 0);
 
