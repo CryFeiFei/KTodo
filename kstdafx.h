@@ -8,8 +8,9 @@ struct KStyle
 	static qreal dpiScaled(qreal value);
 };
 
-#define LEFT_MINIWIDTH KStyle::dpiScaled(205)
-#define LEFT_MAXWIDTH KStyle::dpiScaled(400)
+#define LEFT_MINIWIDTH KStyle::dpiScaled(200)
+#define LEFT_MAXWIDTH KStyle::dpiScaled(300)
+#define LEFT_MINIHEIGHT KStyle::dpiScaled(200)
 #define RIGHT_MINIWIDTH 
 #define RIGHT_MAXWIDTH
 #define MAIN_MINIWIDTH

@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	setCentralWidget(view);
 
 
-	resize(KStyle::dpiScaled(900), KStyle::dpiScaled(550));
+	resize(KStyle::dpiScaled(450), KStyle::dpiScaled(350));
 }
 
 MainWindow::~MainWindow()

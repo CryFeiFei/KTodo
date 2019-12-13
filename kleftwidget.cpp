@@ -18,10 +18,10 @@ KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 	//------------------
 
 	KClassItem* button1 = new KClassItem(this);
-//	button1->setText("1");
+	button1->setText("1");
 	button1->setCheckable(true);
 
-	QPushButton* button2 = new QPushButton(this);
+	KClassItem* button2 = new KClassItem(this);
 	button2->setText("2");
 	button2->setCheckable(true);
 
@@ -35,9 +35,9 @@ KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 	itemsLayout->setContentsMargins(0, 0, 0, 0);
 	itemsLayout->addWidget(button1);
 	itemsLayout->addWidget(button2);
+	itemsLayout->addStretch();
 
 	scrollArea->setLayout(itemsLayout);
-
 	//-----------------
 	mainLayout->addWidget(scrollArea);
 	setLayout(mainLayout);
@@ -46,6 +46,6 @@ KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 
 QSize KLeftWidget::minimumSizeHint() const
 {
-	return QSize(LEFT_MINIWIDTH, size().height());
+	return QSize(LEFT_MINIWIDTH, LEFT_MINIHEIGHT);
 }
 
