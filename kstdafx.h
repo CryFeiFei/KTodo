@@ -10,7 +10,7 @@ struct KStyle
 
 #define LEFT_MINIWIDTH KStyle::dpiScaled(200)
 #define LEFT_MAXWIDTH KStyle::dpiScaled(300)
-#define LEFT_MINIHEIGHT KStyle::dpiScaled(200)
+#define LEFT_MINIHEIGHT KStyle::dpiScaled(100)
 #define RIGHT_MINIWIDTH 
 #define RIGHT_MAXWIDTH
 #define MAIN_MINIWIDTH

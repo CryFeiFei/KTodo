@@ -12,10 +12,12 @@ KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 {
 	QScrollArea* scrollArea = new QScrollArea(this);
 	scrollArea->setFrameShape(QFrame::NoFrame); //这个去除掉滚动条的边框，要不然每次内边都有个1px的空白
+
 	QVBoxLayout* mainLayout = new QVBoxLayout(this);
 	mainLayout->setContentsMargins(0, 0, 0, 0);
 
-	//------------------
+	//------------------]
+	QWidget* innerWidget = new QWidget(this);
 
 	KClassItem* button1 = new KClassItem(this);
 	button1->setText("1");
@@ -24,6 +26,18 @@ KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 	KClassItem* button2 = new KClassItem(this);
 	button2->setText("2");
 	button2->setCheckable(true);
+
+	KClassItem* button3 = new KClassItem(this);
+	button3->setText("2");
+	button3->setCheckable(true);
+
+	KClassItem* button4 = new KClassItem(this);
+	button4->setText("2");
+	button4->setCheckable(true);
+
+	KClassItem* button5 = new KClassItem(this);
+	button5->setText("2");
+	button5->setCheckable(true);
 
 	//just 互斥
 	QButtonGroup* btnGroup = new QButtonGroup(this);
@@ -35,9 +49,15 @@ KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 	itemsLayout->setContentsMargins(0, 0, 0, 0);
 	itemsLayout->addWidget(button1);
 	itemsLayout->addWidget(button2);
+	itemsLayout->addWidget(button3);
+	itemsLayout->addWidget(button4);
+	itemsLayout->addWidget(button5);
 	itemsLayout->addStretch();
 
-	scrollArea->setLayout(itemsLayout);
+	innerWidget->setLayout(itemsLayout);
+	scrollArea->setWidget(innerWidget);
+	scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+	scrollArea->setWidgetResizable(true);
 	//-----------------
 	mainLayout->addWidget(scrollArea);
 	setLayout(mainLayout);

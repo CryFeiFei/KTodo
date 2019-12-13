@@ -8,6 +8,7 @@
 KClassItem::KClassItem(QWidget* parent) : QPushButton(parent)
 {
 	setFlat(true);
+	setMinimumHeight(KStyle::dpiScaled(20));
 }
 
 KClassItem::~KClassItem()
@@ -45,20 +46,18 @@ bool isHover(QStyleOptionButton* option)
 // 	return option->state & QStyle::State_Off;
 // }
 
-// 0. normal×´Ì¬
-// 1. hoverµÄ×´Ì¬ÊÇ¶ÀÁ¢»æÖÆµÄ
-// 2. checkedµÄ×´Ì¬Ò²ÊÇ¶ÀÁ¢»æÖÆµÄ
-// 3¡£mousepressµÄ×´Ì¬Òª¶ÀÁ¢»æÖÆÏÂ 
+// 0. normalçŠ¶æ€
+// 1. hoverçš„çŠ¶æ€æ˜¯ç‹¬ç«‹ç»˜åˆ¶çš„
+// 2. checkedçš„çŠ¶æ€ä¹Ÿæ˜¯ç‹¬ç«‹ç»˜åˆ¶çš„
+// 3ã€‚mousepressçš„çŠ¶æ€è¦ç‹¬ç«‹ç»˜åˆ¶ä¸‹ 
 
-//--------------------»æÖÆ
-//1¡£hover¶¼ÊÇÒ»²ã»ÒÉ«
-//2. selectµÄÑÕÉ« ¸ù¾ÝÖ÷ÌâÉ«
-//3. ×ó±ßÊúÏß Ñ¡ÖÐ¸ù¾ÝÖ÷ÌâÉ«
+//--------------------ç»˜åˆ¶
+//1ã€‚hoveréƒ½æ˜¯ä¸€å±‚ç°è‰²
+//2. selectçš„é¢œè‰² æ ¹æ®ä¸»é¢˜è‰²
+//3. å·¦è¾¹ç«–çº¿ é€‰ä¸­æ ¹æ®ä¸»é¢˜è‰²
 void KClassItem::paintEvent(QPaintEvent* e)
 {
 	QPainter painter(this);
-
-
 	QStyleOptionButton option;
 	initStyleOption(&option);
 
@@ -108,12 +107,13 @@ void KClassItem::paintEvent(QPaintEvent* e)
 
 	QRect rectAll = rect();
 
-	// »æÖÆÍ¼±ê
+	// ç»˜åˆ¶å›¾æ ‡
 	QPixmap pixMap = style()->standardPixmap(QStyle::SP_FileIcon);
 	QRect rectIcon(0, 0, KStyle::dpiScaled(48), rectAll.height());
 	painter.drawPixmap(rectIcon, pixMap);
 
 
+	// ç»˜åˆ¶æ–‡å­—
 	int nTextWidth = rect().width() - KStyle::dpiScaled(48);
 	QString strText = "test";
 	QRect rectText(KStyle::dpiScaled(48), 0, nTextWidth, KStyle::dpiScaled(48));
