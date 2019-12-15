@@ -8,7 +8,7 @@
 KClassItem::KClassItem(QWidget* parent) : QPushButton(parent)
 {
 	setFlat(true);
-	setMinimumHeight(KStyle::dpiScaled(20));
+	setMinimumHeight(LEFT_ITEM_HEIGHT);
 }
 
 KClassItem::~KClassItem()
@@ -18,7 +18,7 @@ KClassItem::~KClassItem()
 
 QSize KClassItem::sizeHint() const
 {
-	return QSize(size().width(), LEFT_ITEM_HEIGHT);
+	return QSize(parentWidget()->rect().width(), LEFT_ITEM_HEIGHT);
 }
 
 bool isPressed(QStyleOptionButton* option)
@@ -115,7 +115,7 @@ void KClassItem::paintEvent(QPaintEvent* e)
 
 	// 绘制文字
 	int nTextWidth = rect().width() - KStyle::dpiScaled(48);
-	QString strText = "test";
+	QString strText = text();
 	QRect rectText(KStyle::dpiScaled(48), 0, nTextWidth, KStyle::dpiScaled(48));
 	QFont fontText;
 	fontText.setPixelSize(20);
