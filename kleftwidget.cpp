@@ -11,7 +11,7 @@
 
 KLeftWidgetSep::KLeftWidgetSep(QWidget* parent /* = nullptr */) : QWidget(parent)
 {
-	setMinimumHeight(LEFT_ITEM_HEIGHT / 2);
+	setMinimumHeight(KStyle::dpiScaled(LEFT_ITEM_HEIGHT) / 2);
 }
 
 KLeftWidgetSep::~KLeftWidgetSep()
@@ -21,7 +21,7 @@ KLeftWidgetSep::~KLeftWidgetSep()
 
 QSize KLeftWidgetSep::sizeHint() const
 {
-	return QSize(rect().width(), LEFT_ITEM_HEIGHT / 2);
+	return QSize(rect().width(), KStyle::dpiScaled(LEFT_ITEM_HEIGHT) / 2);
 }
 
 void KLeftWidgetSep::paintEvent(QPaintEvent* event)
@@ -33,7 +33,7 @@ void KLeftWidgetSep::paintEvent(QPaintEvent* event)
 
 	painter.setPen(pen);
 
-	painter.drawLine(0, LEFT_ITEM_HEIGHT / 4, sizeHint().width(), LEFT_ITEM_HEIGHT / 4);
+	painter.drawLine(0, KStyle::dpiScaled(LEFT_ITEM_HEIGHT) / 4, sizeHint().width(), KStyle::dpiScaled(LEFT_ITEM_HEIGHT) / 4);
 }
 
 //-------------------------------
@@ -118,11 +118,11 @@ KLeftWidget::KLeftWidget(QWidget *parent) : QWidget(parent)
 	//-----------------
 	mainLayout->addWidget(scrollArea);
 	setLayout(mainLayout);
-	setMaximumWidth(LEFT_MAXWIDTH);
+	setMaximumWidth(KStyle::dpiScaled(LEFT_MAXWIDTH));
 }
 
 QSize KLeftWidget::minimumSizeHint() const
 {
-	return QSize(LEFT_MINIWIDTH, LEFT_MINIHEIGHT);
+	return QSize(KStyle::dpiScaled(LEFT_MINIWIDTH), KStyle::dpiScaled(LEFT_MINIHEIGHT));
 }
 

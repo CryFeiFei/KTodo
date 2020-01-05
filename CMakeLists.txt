@@ -44,6 +44,8 @@ add_executable(KTodo
 
 	shell/kclassitem.h
 	shell/kclassitem.cpp
+	shell/model/ktodolistmodel.h
+	shell/model/ktodolistmodel.cpp
 
 	data/kdatamgr.h
 	data/kdatamgr.cpp

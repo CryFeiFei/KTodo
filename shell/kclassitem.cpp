@@ -8,7 +8,7 @@
 KClassItem::KClassItem(QWidget* parent) : QPushButton(parent)
 {
 	setFlat(true);
-	setMinimumHeight(LEFT_ITEM_HEIGHT);
+	setMinimumHeight(KStyle::dpiScaled(LEFT_ITEM_HEIGHT));
 }
 
 KClassItem::~KClassItem()
@@ -18,7 +18,7 @@ KClassItem::~KClassItem()
 
 QSize KClassItem::sizeHint() const
 {
-	return QSize(parentWidget()->rect().width(), LEFT_ITEM_HEIGHT);
+	return QSize(parentWidget()->rect().width(), KStyle::dpiScaled(LEFT_ITEM_HEIGHT));
 }
 
 bool isPressed(QStyleOptionButton* option)
